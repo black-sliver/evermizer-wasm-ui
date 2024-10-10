@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.24.0",
+    "rollup-plugin-cleandir": "^3.0.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-scss": "^4.0.0",
+    "sass": "^1.79.4"
+  }
+}

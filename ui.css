@@ -1,0 +1,242 @@
+body {
+    color: #fff;
+    background: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 16px;
+}
+
+#ui {
+    display: table;
+    margin: auto;
+    background: #222;
+    min-width: 34%;
+    padding: 16px;
+    border-radius: 5px;
+}
+
+#ui.busy,
+#ui.busy * {
+    cursor: progress
+}
+
+#drop {
+    display: block;
+    padding: 32px;
+    margin: 8px 0 8px 0;
+    border-radius: 4px;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    vertical-align: middle;
+}
+
+#drop.over {
+    color: #fff;
+    background: #000;
+    border: 1px solid #fff;
+}
+
+.loaded #drop {
+    display: table;
+    padding: 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#drop img {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#drop div {
+    display: table-cell;
+    overflow: ellipsis;
+    padding: 16px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+#cfg,
+#rom,
+.hidden,
+#ui.hidden {
+    display: none;
+}
+
+.forced-hidden {
+    display: none !important;
+}
+
+.loaded #cfg {
+    display: table;
+}
+
+#cfg>div {
+    display: table-row;
+}
+
+#cfg>div>label {
+    display: table-cell;
+}
+
+.mystery .nomystery {
+    display: none !important;
+}
+
+label {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+input,
+select {
+    margin: 4px;
+    margin-left: 8px;
+}
+
+button,
+input[type=submit],
+#perma {
+    margin: 8px;
+}
+
+footer {
+    display: block;
+    font-size: .9em;
+    margin-top: 32px;
+}
+
+a {
+    color: #39638c;
+    outline: 0;
+}
+
+a:active,
+a:hover {
+    color: #68b4ff;
+}
+
+#cfg,
+#options {
+    width: 100%;
+}
+
+#options {
+    padding-top: 10px;
+}
+
+.oname,
+.aname {
+    margin: 3px 0px -3px 0px;
+    float: left;
+    clear: left;
+    min-width: 40%;
+}
+
+.afield input {
+    margin: 0;
+}
+
+#options div:not(.opt_grp):not(.opt_sub_grp) {
+    height: 26px
+}
+
+#options div.aname,
+#options div.afield {
+    height: 32px
+}
+
+.opt_grp_label {
+    position: relative;
+    top: 0.5em;
+    left: 1em;
+    background: #222;
+    border-radius: 5px;
+    padding: 0px 5px;
+}
+
+.opt_grp {
+    display: block;
+    border: solid 1px #ddd;
+    border-radius: 5px;
+    padding: 10px 5px 10px 5px;
+}
+
+.opt_sub_grp_label {
+    position: relative;
+    top: 0.5em;
+    left: 1em;
+    background: #222;
+    padding: 0px 5px;
+}
+
+.opt_sub_grp {
+    display: block;
+    border-top: solid 1px #ddd;
+    padding: 10px 0;
+}
+
+input:disabled [type=radio] {
+    background-color: #444;
+}
+
+input:disabled+label {
+    color: #444
+}
+
+@media all and (orientation:portrait) {
+    #options div {
+        clear: left
+    }
+
+    #ui {
+        width: 90%
+    }
+}
+
+@media screen and (min-width:1441px) {
+    #ui {
+        width: 40%;
+        min-width: 560px
+    }
+}
+
+@media screen and (max-width:1440px) {
+    #ui {
+        width: 45%;
+        min-width: 555px
+    }
+}
+
+@media screen and (max-width:1280px) {
+    #ui {
+        width: 60%;
+        min-width: 550px
+    }
+}
+
+@media screen and (max-width:812px) {
+    #ui {
+        min-width: 90%
+    }
+}
+
+#ro {
+    color: #f76;
+}
+
+.ro select[disabled],
+.ro input[readonly] {
+    color: #444;
+}
+
+.ro #perma {
+    display: none;
+}
+
+.ro #settings,
+.ro #options,
+.ro #difficulties {
+    opacity: .7;
+}

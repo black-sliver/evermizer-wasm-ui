@@ -1,0 +1,16 @@
+# built files
+evermizer.js/*/**
+
+# dist
+/dist/
+
+# garbage
+updating
+old
+*.zip
+
+# node temps
+node_modules
+
+# as long as we only have dev dependencies
+package-lock.json
