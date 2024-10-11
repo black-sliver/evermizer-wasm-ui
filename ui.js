@@ -105,7 +105,7 @@ function runExe(args) {
 function uniqueci(s) {
   let res = "";
   let lower = s.toLowerCase();
-  for (let i = 0; i < s.length; i++) if (i === lower.lastIndexOf(lower[i])) r += s[i];
+  for (let i = 0; i < s.length; i++) if (i === lower.lastIndexOf(lower[i])) res += s[i];
   return res;
 }
 
