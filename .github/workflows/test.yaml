@@ -6,6 +6,8 @@ on:
 
 jobs:
   unit-test:
+    runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v4
     - name: Build
@@ -14,4 +16,4 @@ jobs:
         npm run build
     - name: Test
       run: |
-        phpunit tests --display-deprecations
+        phpunit tests #--display-deprecations
