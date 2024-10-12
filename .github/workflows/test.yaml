@@ -1,0 +1,17 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unit-test:
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build
+      run: |
+        npm i --dev
+        npm run build
+    - name: Test
+      run: |
+        phpunit tests --display-deprecations
