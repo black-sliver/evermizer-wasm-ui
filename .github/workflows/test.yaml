@@ -17,3 +17,24 @@ jobs:
     - name: Test
       run: |
         phpunit tests #--display-deprecations
+
+  trigger_publish_preview:
+    if: github.event_name == 'push' && github.ref_name == 'main'
+
+    runs-on: ubuntu-latest
+    needs:
+      - unit-test
+
+    steps:
+    - name: Trigger workflow run
+      env:
+        GH_TOKEN: ${{ secrets.EVERMIZER_PAT }}
+      if: ${{ env.GH_TOKEN != '' }}
+      run: |
+        repo="${{ github.repository_owner }}/evermizer"
+        gh api \
+          --method POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          /repos/$repo/dispatches \
+            -f "event_type=wasm-ui-update"
