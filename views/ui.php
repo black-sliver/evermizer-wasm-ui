@@ -23,7 +23,7 @@
             <?php } ?>
         </select>
         <?php if ($readonly) { ?>
-        <span id="ro">Ths is a race/read-only link</span>
+        <span id="ro">This is a race/read-only link</span>
         <?php } ?>
 
         <label id="drop" for="rom">Loading...</label>
