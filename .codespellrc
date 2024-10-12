@@ -1,0 +1,3 @@
+[codespell]
+skip = ./.git,./node_modules,./old
+ignore-words = ./.codespellignore
