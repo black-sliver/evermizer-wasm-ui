@@ -12,7 +12,8 @@
          failOnRisky="true"
          failOnWarning="true"
          backupGlobals="true"
-         processIsolation="false">
+         processIsolation="true">
+    <!-- processIsolation in config required for older versions -->
     <testsuites>
         <testsuite name="default">
             <directory>tests</directory>
