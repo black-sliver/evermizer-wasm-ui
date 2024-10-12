@@ -1,12 +1,14 @@
 <?php
 
 if (!isset($_GET["settings"]) || !isset($_GET["v"])) {
-    die("Invalid link!");
+    echo 'Invalid link!';
+    return;
 }
 
 $version = intval(substr($_GET["v"], 1));
 if ($version < 43) {
-    die("Not implemented for versions before v043");
+    echo 'Not implemented for versions before v043';
+    return;
 }
 
 $settings = $_GET["settings"];
@@ -165,4 +167,3 @@ if (!$mix_gourds_and_alchemists && !$mix_gourds_and_bosses && !$mix_sniff_and_go
 $max_rows = max(count($gourd_items), count($alchemist_items), count($boss_items), count($sniff_items));
 
 require('views/distribution.php');
-?>

@@ -17,7 +17,8 @@ if (isset($_GET['weekly'])) {
         // load the weekly override, if any
         @require_once('../weekly/override.inc.php');
     } catch (\Throwable $e) {
-        die('Weekly seed configuration not available!');
+        echo 'Weekly seed configuration not available!';
+        return;
     }
 } else {
     // regular evermizer
@@ -83,4 +84,3 @@ function script_file($name) {
 }
 
 require_once('views/ui.php');
-?>
