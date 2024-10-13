@@ -61,10 +61,10 @@ if (isset($_GET['weekly'])) {
 // wasm version as integer
 $evermizer_version_number = intval(substr($ver,1));
 
-$manifest_hash = @include('manifest.hash.php');
+$GLOBALS['manifest_hash'] = @include(__DIR__ . '/manifest.hash.php');
 
 function style_file($name) {
-    global $manifest_hash;
+    $manifest_hash = $GLOBALS['manifest_hash'];
 
     if ($manifest_hash) {
         return $manifest_hash[$name] ?? null;
@@ -74,7 +74,7 @@ function style_file($name) {
 }
 
 function script_file($name) {
-    global $manifest_hash;
+    $manifest_hash = $GLOBALS['manifest_hash'];
 
     if ($manifest_hash) {
         return $manifest_hash[$name] ?? null;
