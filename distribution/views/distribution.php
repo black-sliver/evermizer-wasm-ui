@@ -32,19 +32,18 @@
             </thead>
             <tbody>
                 <tr><th>Key Items:</th><td><?= $total_gourds ?></td><td><?= $total_alchemists ?></td><td><?= $total_bosses ?></td><td><?= $total_sniff ?></td></tr>
-    <?php if ($has_fragments) { ?>
+<?php if ($has_fragments) { ?>
                 <tr><th>Fragments:</th><td><?= $gourd_fragments ?></td><td><?= $alchemist_fragments ?></td><td><?= $boss_fragments ?></td><td><?= $sniff_fragments ?></tr>
-    <?php } ?>
-    <?php for ($i=0; $i < $max_rows; $i++) { ?>
+<?php }
+      for ($i=0; $i < $max_rows; $i++) { ?>
                 <tr>
-                    <?php if ($i == 0) { ?><th>Possible Items:</th><?php } else { ?><td></td><?php } ?>
+                    <th><?= ($i == 0) ? 'Possible Items:' : '' ?></th>
                     <td><?= $gourd_items[$i] ?? '' ?></td>
                     <td><?= $alchemist_items[$i] ?? '' ?></td>
                     <td><?= $boss_items[$i] ?? '' ?></td>
                     <td><?= $sniff_items[$i] ?? '' ?></td>
-                </tr><tr>
-    <?php } ?>
                 </tr>
+<?php } ?>
             </tbody>
         </table>
     </body>
