@@ -413,6 +413,7 @@ function updateSettings(
     mystery = g.override["mystery"];
   is_mystery = mystery;
   el("mystery").checked = mystery;
+  if (readonly) el("ui").classList.add("ro");
   if (!mystery && !readonly && !data) updatePresets();
   runExe(["--settings.json"]);
   if (outBuf.startsWith("OK{")) outBuf = outBuf.substr(2); // happens if run twice; TODO: fix this
