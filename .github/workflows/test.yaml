@@ -16,6 +16,7 @@ jobs:
         npm run build
     - name: Test
       run: |
+        mkdir -p evermizer.js/v000
         phpunit tests #--display-deprecations
 
   trigger_publish_preview:

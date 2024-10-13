@@ -55,6 +55,9 @@ if (isset($_GET['weekly'])) {
             }
             $versions[] = $v;
         }
+        if ($ver === null) {
+            $ver = $versions[0]; // select first dev version is no non-dev version exists
+        }
     }
 }
 
