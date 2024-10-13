@@ -224,6 +224,11 @@ input:disabled+label {
 
 #ro {
     color: #f76;
+    display: none;
+}
+
+.ro #ro {
+    display: inline-block;
 }
 
 .ro select[disabled],

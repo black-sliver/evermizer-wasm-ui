@@ -22,9 +22,7 @@
             <option value="<?= $v ?>" <?= ($v == $ver) ? ' selected' : '' ?>><?= $v ?></option>
             <?php } ?>
         </select>
-        <?php if ($readonly) { ?>
         <span id="ro">This is a race/read-only link</span>
-        <?php } ?>
 
         <label id="drop" for="rom">Loading...</label>
         <input type="file" id="rom" accept=".sfc,.smc<?php /*,application/vnd.nintendo.snes.rom*/ ?>" />
@@ -88,14 +86,15 @@
             },
 <?php } ?>
             onRuntimeInitialized: function() {
+                const params = new URLSearchParams(window.location.search);
                 ready = true;
                 updateSettings(
                     <?= json_encode($data) ?>,
                     <?= json_encode($weekly_version) ?>,
-                    <?= json_encode($settings) ?>,
-                    <?= json_encode($seed) ?>,
-                    <?= json_encode($readonly) ?>,
-                    <?= json_encode($mystery) ?>);
+                    <?= json_encode($settings) ?> || params.get('settings') || null,
+                    <?= json_encode($seed) ?> || params.get('seed') || null,
+                    <?= json_encode($readonly) ?> || !!params.get('ro') || false,
+                    <?= json_encode($mystery) ?> || !!params.get('mystery') || false);
                 let drop = document.getElementById('drop');
                 drop.innerHTML = dropInfo;
             }
