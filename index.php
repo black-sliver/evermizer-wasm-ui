@@ -83,4 +83,4 @@ function script_file($name) {
     }
 }
 
-require_once('views/ui.php');
+require_once(__DIR__ . '/views/ui.php');

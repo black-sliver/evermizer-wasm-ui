@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Evermizer.js</title>
     <style>
-        <?php include(style_file('ui.css')); ?> 
+        <?php require(__DIR__ . '/../' . style_file('ui.css')); ?>
     </style>
 </head>
 
