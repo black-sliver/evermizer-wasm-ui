@@ -1,6 +1,8 @@
 # Rules to correctly serve gzip compressed CSS and JS files.
 # Requires both mod_rewrite and mod_headers to be enabled.
 <IfModule mod_headers.c>
+  RewriteEngine on
+
   # Serve brotli compressed JS files if they exist and the client accepts br.
   RewriteCond %{HTTP:Accept-encoding} br
   RewriteCond %{REQUEST_FILENAME}\.br -s
