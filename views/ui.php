@@ -86,6 +86,7 @@
             },
 <?php } ?>
             onRuntimeInitialized: function() {
+                if (ready) return;
                 const params = new URLSearchParams(window.location.search);
                 ready = true;
                 updateSettings(
