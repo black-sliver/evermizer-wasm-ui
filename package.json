@@ -4,7 +4,7 @@
     "build-static": "rollup -c --variant static"
   },
   "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-terser": "^1.0.0",
     "html-minifier-terser": "^7.2.0",
     "rollup": "^4.24.0",
     "rollup-plugin-cleandir": "^3.0.0",
