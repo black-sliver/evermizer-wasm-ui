@@ -5,14 +5,27 @@ on:
   pull_request:
 
 jobs:
+  npm-audit:
+    runs-on: ubuntu-latest
+    permissions: {}
+
+    steps:
+    - uses: actions/checkout@v6
+    - name: npm audit
+      run: |
+        npm audit
+
   unit-test:
     runs-on: ubuntu-latest
+    permissions: {}
+    needs:
+      - npm-audit
 
     steps:
     - uses: actions/checkout@v6
     - name: Build
       run: |
-        npm i --dev
+        npm ci --dev
         npm run build
     - name: Test
       run: |

@@ -12,8 +12,5 @@ old
 # node temps
 node_modules
 
-# as long as we only have dev dependencies
-package-lock.json
-
 # cache
 .phpunit.cache/
