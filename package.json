@@ -10,6 +10,6 @@
     "rollup-plugin-cleandir": "3.0.0",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-scss": "4.0.0",
-    "sass": "1.97.3"
+    "sass": "1.98.0"
   }
 }
