@@ -6,7 +6,7 @@
   "devDependencies": {
     "@rollup/plugin-terser": "1.0.0",
     "html-minifier-terser": "7.2.0",
-    "rollup": "4.59.0",
+    "rollup": "4.60.0",
     "rollup-plugin-cleandir": "3.0.0",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-scss": "4.0.0",
