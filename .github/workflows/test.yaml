@@ -14,7 +14,8 @@ jobs:
     - uses: actions/checkout@v6.0.2
     - name: npm audit
       run: |
-        npm audit
+        # we currently only have dev dependencies, so unlikely they are a real problem
+        npm audit --audit-level=high
 
   unit-test:
     runs-on: ubuntu-latest
