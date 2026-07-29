@@ -23,13 +23,13 @@ const remove_assets_js = function(opts = {}) {
 
 const copy = function(opts) {
     // opts is { targets: [ { src: ..., dest: ... } ] }
-    return  {
+    return {
         name: "copy",
         buildEnd: async() => {
             for (const target of opts["targets"]) {
                 const srcPattern = target["src"];
                 if (!srcPattern) {
-                    throw `Invalid src: "${srcPatterh}"`;
+                    throw `Invalid src: "${srcPattern}"`;
                 }
                 let destDir = target["dest"];
                 if (!destDir) {
