@@ -1,10 +1,10 @@
 const fs = require("fs");
+const { cp, glob } = require('node:fs/promises');
 const path = require('node:path');
 const spawn = require('child_process').spawn;
 const spawnSync = require('child_process').spawnSync;
 
 const { cleandir } = require("rollup-plugin-cleandir");
-const copy = require("rollup-plugin-copy");
 const scss = require('rollup-plugin-scss');
 const terser = require('@rollup/plugin-terser');
 
@@ -15,6 +15,34 @@ const remove_assets_js = function(opts = {}) {
             for (const key of Object.keys(bundle)) {
                 if (key.match(/assets\.[\w-]+\.js/)) {
                     delete bundle[key];
+                }
+            }
+        }
+    }
+}
+
+const copy = function(opts) {
+    // opts is { targets: [ { src: ..., dest: ... } ] }
+    return  {
+        name: "copy",
+        buildEnd: async() => {
+            for (const target of opts["targets"]) {
+                const srcPattern = target["src"];
+                if (!srcPattern) {
+                    throw `Invalid src: "${srcPatterh}"`;
+                }
+                let destDir = target["dest"];
+                if (!destDir) {
+                    throw `Invalid dest: "${destDir}"`;
+                }
+                if (!destDir.endsWith("/") && !destDir.endsWith("\\")) {
+                    destDir += "/";
+                }
+                for await (const srcEntry of glob(srcPattern)) {
+                    const entryName = path.basename(srcEntry);
+                    const destEntry = destDir + entryName;
+                    console.log(`${srcEntry} -> ${destEntry}`);
+                    await cp(srcEntry, destEntry, {preserveTimestamps: true, recursive: true});
                 }
             }
         }

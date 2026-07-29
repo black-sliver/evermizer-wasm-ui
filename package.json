@@ -8,7 +8,6 @@
     "html-minifier-terser": "7.2.0",
     "rollup": "4.62.2",
     "rollup-plugin-cleandir": "3.0.0",
-    "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-scss": "4.0.0",
     "sass": "1.99.0"
   }
